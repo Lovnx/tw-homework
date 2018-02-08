@@ -7,7 +7,7 @@ import java.util.Map;
 
 /*
  * function - template class for implement
- * author - yzhiyuan
+ * author - yezhiyuan
  * date - 02 08 2018
  */
 public abstract class AllocateTemplate implements Allocate{

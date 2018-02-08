@@ -6,7 +6,7 @@ import java.util.Random;
 
 /*
  * function - core class of conference management
- * author - yzhiyuan
+ * author - yezhiyuan
  * date - 02 08 2018
  */
 public class RadomAllocateStrategy extends AllocateTemplate {

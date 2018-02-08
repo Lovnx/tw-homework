@@ -6,7 +6,7 @@ import java.util.Map;
 
 /*
  * function - core interface
- * author - yzhiyuan
+ * author - yezhiyuan
  * date - 02 08 2018
  */
 public interface Allocate {

@@ -2,7 +2,7 @@ package com.tw.homework.conference;
 
 /*
  * function - Conference abstract
- * author - yzhiyuan
+ * author - yezhiyuan
  * date - 02 08 2018
  */
 public class Talk {

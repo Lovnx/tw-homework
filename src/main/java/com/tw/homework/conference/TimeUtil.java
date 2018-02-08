@@ -5,7 +5,7 @@ import java.util.Date;
 
 /*
  * function - time controller
- * author - yzhiyuan
+ * author - yezhiyuan
  * date - 02 08 2018
  */
 public class TimeUtil {

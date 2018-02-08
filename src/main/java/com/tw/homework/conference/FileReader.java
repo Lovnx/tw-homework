@@ -9,7 +9,7 @@ import java.util.List;
 
 /*
  * function - core class of file reader
- * author - yzhiyuan
+ * author - yezhiyuan
  * date - 02 08 2018
  */
 public class FileReader extends AllocateTemplate {

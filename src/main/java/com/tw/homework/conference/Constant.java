@@ -2,7 +2,7 @@ package com.tw.homework.conference;
 
 /*
  * function - constant variables
- * author - yzhiyuan
+ * author - yezhiyuan
  * date - 02 08 2018
  */
 public interface Constant {
