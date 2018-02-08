@@ -6,13 +6,14 @@ package com.tw.homework.conference;
  * date - 02 08 2018
  */
 public class Talk {
-
+	//原始字符内容
     private String title;
+    //talk名称
     private String name;
+    //talk时长
     private Integer timeAfter;
     
 	public Talk(String title, String name, Integer timeAfter) {
-		super();
 		this.title = title;
 		this.name = name;
 		this.timeAfter = timeAfter;

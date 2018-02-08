@@ -3,6 +3,7 @@ package com.tw.homework.conference;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Random;
+import static com.tw.homework.conference.Constant.*;
 
 /*
  * function - core class of conference management
@@ -28,12 +29,12 @@ public class RadomAllocateStrategy extends AllocateTemplate {
 		int sum = 0;
 		List<Talk> listTemp = new LinkedList<Talk>();
 		listTemp.addAll(origin);
-		while (sum != Constant.AM_MINUTES) {
+		while (sum != AM_MINUTES) {
 			Integer index = new Random().nextInt(listTemp.size());
 			Talk ele = listTemp.get(index);
 			super.trackOneAm.add(ele);
 			listTemp.remove((int)index);
-			if ((sum += ele.getTimeAfter()) > 180) {
+			if ((sum += ele.getTimeAfter()) > AM_MINUTES) {
 				sum = 0;
 				super.trackOneAm.clear();
 				listTemp.clear();
@@ -49,12 +50,12 @@ public class RadomAllocateStrategy extends AllocateTemplate {
 		int sum2 = 0;
 		List<Talk> listTemp2 = new LinkedList<Talk>();
 		listTemp2.addAll(listTemp);
-		while (sum2 != Constant.AM_MINUTES) {
+		while (sum2 != AM_MINUTES) {
 			Integer index = new Random().nextInt(listTemp2.size());
 			Talk ele = listTemp2.get(index);
 			listTemp2.remove((int)index);
 			super.trackTwoAm.add(ele);
-			if ((sum2 += ele.getTimeAfter()) > 180) {
+			if ((sum2 += ele.getTimeAfter()) > AM_MINUTES) {
 				sum2 = 0;
 				super.trackTwoAm.clear();
 				listTemp2.clear();
@@ -70,7 +71,7 @@ public class RadomAllocateStrategy extends AllocateTemplate {
 		int sum3 = 0;
 		List<Talk> listTemp3 = new LinkedList<Talk>();
 		listTemp3.addAll(listTemp2);
-		while (sum3 < Constant.PM_MINUTES_MIN || sum3 > Constant.PM_MINUTES_MAX) {
+		while (sum3 < PM_MINUTES_MIN || sum3 > PM_MINUTES_MAX) {
 			Integer index = new Random().nextInt(listTemp3.size());
 			Talk ele = listTemp3.get(index);
 			listTemp3.remove((int)index);
