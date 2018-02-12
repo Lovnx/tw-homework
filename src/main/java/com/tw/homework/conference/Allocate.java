@@ -11,9 +11,9 @@ import java.util.Map;
  */
 public interface Allocate {
 	
-	List<Talk> initialTalkList = new ArrayList<Talk>();
+	List<Conference> initialTalkList = new ArrayList<Conference>();
 	
-	Map<String, List<Talk>> getResult();
+	Map<String, List<Conference>> getResult();
 	
 	void operate(Object object) throws Exception;
 }

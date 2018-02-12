@@ -24,7 +24,7 @@ public class Context {
 		allocate.operate(object);
 	}
 	
-	public Map<String, List<Talk>> getResult(){
+	public Map<String, List<Conference>> getResult(){
 		return allocate.getResult();
 	}
 }

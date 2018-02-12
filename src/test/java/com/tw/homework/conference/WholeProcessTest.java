@@ -9,7 +9,7 @@ import org.junit.Test;
 
 public class WholeProcessTest {
 	
-	Map<String, List<Talk>> map = null;
+	Map<String, List<Conference>> map = null;
 	
 	long begin = 0;
 	
@@ -33,35 +33,35 @@ public class WholeProcessTest {
 		//the next is iterative printing process
 		int t1a = 0, t1p = 0, t2a = 0, t2p = 0;
 		System.out.println("Track 1:");
-		List<Talk> trackOneAm = map.get("trackOneAm");
-		for (Talk talk : trackOneAm) {
+		List<Conference> trackOneAm = map.get("trackOneAm");
+		for (Conference Conference : trackOneAm) {
 			Date morning = TimeUtil.getMorningBegins();
-			System.out.println(TimeUtil.getTimeAfter(morning, t1a) + talk.getTitle());
-			t1a += talk.getTimeDuration();
+			System.out.println(TimeUtil.getTimeAfter(morning, t1a) + Conference.getTitle());
+			t1a += Conference.getTimeDuration();
 		}
 		System.out.println("12:00 PM Lunch");
-		List<Talk> trackOnePm = map.get("trackOnePm");
-		for (Talk talk : trackOnePm) {
+		List<Conference> trackOnePm = map.get("trackOnePm");
+		for (Conference Conference : trackOnePm) {
 			Date aftermoon = TimeUtil.getAfternoonBegins();
-			System.out.println(TimeUtil.getTimeAfter(aftermoon, t1p) + talk.getTitle());
-			t1p += talk.getTimeDuration();
+			System.out.println(TimeUtil.getTimeAfter(aftermoon, t1p) + Conference.getTitle());
+			t1p += Conference.getTimeDuration();
 		}
 		
 		System.out.println();
 		
 		System.out.println("Track 2:");
-		List<Talk> trackTwoAm = map.get("trackTwoAm");
-		for (Talk talk : trackTwoAm) {
+		List<Conference> trackTwoAm = map.get("trackTwoAm");
+		for (Conference Conference : trackTwoAm) {
 			Date morning = TimeUtil.getMorningBegins();
-			System.out.println(TimeUtil.getTimeAfter(morning, t2a) + talk.getTitle());
-			t2a += talk.getTimeDuration();
+			System.out.println(TimeUtil.getTimeAfter(morning, t2a) + Conference.getTitle());
+			t2a += Conference.getTimeDuration();
 		}
 		System.out.println("12:00 PM Lunch");
-		List<Talk> trackTwoPm = map.get("trackTwoPm");
-		for (Talk talk : trackTwoPm) {
+		List<Conference> trackTwoPm = map.get("trackTwoPm");
+		for (Conference Conference : trackTwoPm) {
 			Date aftermoon = TimeUtil.getAfternoonBegins();
-			System.out.println(TimeUtil.getTimeAfter(aftermoon, t2p) + talk.getTitle());
-			t2p += talk.getTimeDuration();
+			System.out.println(TimeUtil.getTimeAfter(aftermoon, t2p) + Conference.getTitle());
+			t2p += Conference.getTimeDuration();
 		}
 		System.out.println();
 		System.out.println("------------------spend total: "+(System.currentTimeMillis() - begin)+"ms------------------");

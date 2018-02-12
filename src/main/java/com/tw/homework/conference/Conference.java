@@ -5,7 +5,7 @@ package com.tw.homework.conference;
  * author - yezhiyuan
  * date - 02 08 2018
  */
-public class Talk {
+public class Conference {
 	//initial talk name
     private String title;
     //talk name no duration
@@ -13,7 +13,7 @@ public class Talk {
     //duration
     private Integer timeDuration;
     
-	public Talk(String title, String name, Integer timeDuration) {
+	public Conference(String title, String name, Integer timeDuration) {
 		this.title = title;
 		this.name = name;
 		this.timeDuration = timeDuration;
