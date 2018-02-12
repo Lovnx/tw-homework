@@ -4,11 +4,18 @@ import java.util.Date;
 import java.util.List;
 import java.util.Map;
 
-@SuppressWarnings("all")
-public class RunMain {
+import org.junit.Before;
+import org.junit.Test;
 
-	public static void main(String[] args) throws Exception {
-		long begin = System.currentTimeMillis();
+public class WholeProcessTest {
+	
+	Map<String, List<Talk>> map = null;
+	
+	long begin = 0;
+	
+	@Before
+	public void setUp() throws Exception {
+		begin = System.currentTimeMillis();
 		//initial the Context
 		Context context;
 		//read file
@@ -18,9 +25,11 @@ public class RunMain {
 		context.setAllocate(new RadomAllocateStrategy());
 		context.operate(null);
 		//get allocate result Map, step to this line, our goal has been reached
-		Map<String, List<Talk>> map = context.getResult();
-		
-		
+		map = context.getResult();
+	}
+
+	@Test
+	public void test() throws Exception {
 		//the next is iterative printing process
 		int t1a = 0, t1p = 0, t2a = 0, t2p = 0;
 		System.out.println("Track 1:");
