@@ -37,14 +37,14 @@ public class WholeProcessTest {
 		for (Talk talk : trackOneAm) {
 			Date morning = TimeUtil.getMorningBegins();
 			System.out.println(TimeUtil.getTimeAfter(morning, t1a) + talk.getTitle());
-			t1a += talk.getTimeAfter();
+			t1a += talk.getTimeDuration();
 		}
 		System.out.println("12:00 PM Lunch");
 		List<Talk> trackOnePm = map.get("trackOnePm");
 		for (Talk talk : trackOnePm) {
 			Date aftermoon = TimeUtil.getAfternoonBegins();
 			System.out.println(TimeUtil.getTimeAfter(aftermoon, t1p) + talk.getTitle());
-			t1p += talk.getTimeAfter();
+			t1p += talk.getTimeDuration();
 		}
 		
 		System.out.println();
@@ -54,14 +54,14 @@ public class WholeProcessTest {
 		for (Talk talk : trackTwoAm) {
 			Date morning = TimeUtil.getMorningBegins();
 			System.out.println(TimeUtil.getTimeAfter(morning, t2a) + talk.getTitle());
-			t2a += talk.getTimeAfter();
+			t2a += talk.getTimeDuration();
 		}
 		System.out.println("12:00 PM Lunch");
 		List<Talk> trackTwoPm = map.get("trackTwoPm");
 		for (Talk talk : trackTwoPm) {
 			Date aftermoon = TimeUtil.getAfternoonBegins();
 			System.out.println(TimeUtil.getTimeAfter(aftermoon, t2p) + talk.getTitle());
-			t2p += talk.getTimeAfter();
+			t2p += talk.getTimeDuration();
 		}
 		System.out.println();
 		System.out.println("------------------spend total: "+(System.currentTimeMillis() - begin)+"ms------------------");

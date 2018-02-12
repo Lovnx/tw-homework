@@ -34,7 +34,7 @@ public class RadomAllocateStrategy extends AllocateTemplate {
 			Talk ele = listTemp.get(index);
 			super.trackOneAm.add(ele);
 			listTemp.remove((int)index);
-			if ((sum += ele.getTimeAfter()) > AM_MINUTES) {
+			if ((sum += ele.getTimeDuration()) > AM_MINUTES) {
 				sum = 0;
 				super.trackOneAm.clear();
 				listTemp.clear();
@@ -55,7 +55,7 @@ public class RadomAllocateStrategy extends AllocateTemplate {
 			Talk ele = listTemp2.get(index);
 			listTemp2.remove((int)index);
 			super.trackTwoAm.add(ele);
-			if ((sum2 += ele.getTimeAfter()) > AM_MINUTES) {
+			if ((sum2 += ele.getTimeDuration()) > AM_MINUTES) {
 				sum2 = 0;
 				super.trackTwoAm.clear();
 				listTemp2.clear();
@@ -76,7 +76,7 @@ public class RadomAllocateStrategy extends AllocateTemplate {
 			Talk ele = listTemp3.get(index);
 			listTemp3.remove((int)index);
 			super.trackOnePm.add(ele);
-			sum3 += ele.getTimeAfter();
+			sum3 += ele.getTimeDuration();
 		}
 		super.trackOnePm.add(new Talk("Networking Event", "Networking Event", 0));
 		return listTemp3;

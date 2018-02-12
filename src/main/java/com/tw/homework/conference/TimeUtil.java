@@ -13,8 +13,8 @@ public class TimeUtil {
 	/*
 	 * function - caculate the clock, pass 'timeAfter' minutes
 	 */
-	public static String getTimeAfter(Date date, int timeAfter) {
-		long newTimeInLong = date.getTime() + timeAfter * 60 * 1000;
+	public static String getTimeAfter(Date date, int timeDuration) {
+		long newTimeInLong = date.getTime() + timeDuration * 60 * 1000;
 		date.setTime(newTimeInLong);
 		String str = new SimpleDateFormat("hh:mma ").format(date);
 		if (str.indexOf("上午") > -1) str = str.replace("上午", " AM");
