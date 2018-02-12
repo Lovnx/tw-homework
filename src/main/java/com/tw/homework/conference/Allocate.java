@@ -11,7 +11,7 @@ import java.util.Map;
  */
 public interface Allocate {
 	
-	List<Talk> origin = new ArrayList<Talk>();
+	List<Talk> initialTalkList = new ArrayList<Talk>();
 	
 	Map<String, List<Talk>> getResult();
 	

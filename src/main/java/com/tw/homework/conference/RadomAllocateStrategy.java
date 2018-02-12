@@ -14,7 +14,7 @@ public class RadomAllocateStrategy extends AllocateTemplate {
 
 	@Override
 	public void operate(Object object) throws Exception {
-		if (origin.isEmpty()) {
+		if (initialTalkList.isEmpty()) {
 			throw new RuntimeException("Please read the file firstly！");
 		}
 		List<Talk> listTemp = allocateTrackOneAm();
@@ -28,7 +28,7 @@ public class RadomAllocateStrategy extends AllocateTemplate {
 	private List<Talk> allocateTrackOneAm() {
 		int sum = 0;
 		List<Talk> listTemp = new LinkedList<Talk>();
-		listTemp.addAll(origin);
+		listTemp.addAll(initialTalkList);
 		while (sum != AM_MINUTES) {
 			Integer index = new Random().nextInt(listTemp.size());
 			Talk ele = listTemp.get(index);
@@ -38,7 +38,7 @@ public class RadomAllocateStrategy extends AllocateTemplate {
 				sum = 0;
 				super.trackOneAm.clear();
 				listTemp.clear();
-				listTemp.addAll(origin);
+				listTemp.addAll(initialTalkList);
 			}
 		}
 		return listTemp;

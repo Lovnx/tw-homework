@@ -21,4 +21,22 @@ public class TimeUtil {
 		if (str.indexOf("下午") > -1) str = str.replace("下午", " PM");
 		return str;
 	}
+	
+	@SuppressWarnings("deprecation")
+	public static Date getMorningBegins() {
+		Date morning = new Date();
+		morning.setHours(9);
+		morning.setMinutes(0);
+		morning.setSeconds(0);
+		return morning;
+	}
+	
+	@SuppressWarnings("deprecation")
+	public static Date getAfternoonBegins() {
+		Date afternoon = new Date();
+		afternoon.setHours(13);
+		afternoon.setMinutes(0);
+		afternoon.setSeconds(0);
+		return afternoon;
+	}
 }
