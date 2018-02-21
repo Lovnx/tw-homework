@@ -10,7 +10,9 @@ import static com.tw.homework.conference.Constant.*;
  * author - yezhiyuan
  * date - 02 08 2018
  */
-public class RadomAllocateStrategy extends AllocateTemplate {
+public class RandomAllocateStrategy extends AllocateTemplate {
+	
+	private Random random = new Random();
 
 	@Override
 	public void operate(Object object) throws Exception {
@@ -30,7 +32,7 @@ public class RadomAllocateStrategy extends AllocateTemplate {
 		List<Conference> listTemp = new LinkedList<Conference>();
 		listTemp.addAll(INITIAL_CONFERENCE_LIST);
 		while (sum != AM_MINUTES) {
-			Integer index = new Random().nextInt(listTemp.size());
+			Integer index = random.nextInt(listTemp.size());
 			Conference ele = listTemp.get(index);
 			super.trackOneAm.add(ele);
 			listTemp.remove((int)index);
@@ -51,7 +53,7 @@ public class RadomAllocateStrategy extends AllocateTemplate {
 		List<Conference> listTemp2 = new LinkedList<Conference>();
 		listTemp2.addAll(listTemp);
 		while (sum2 != AM_MINUTES) {
-			Integer index = new Random().nextInt(listTemp2.size());
+			Integer index = random.nextInt(listTemp2.size());
 			Conference ele = listTemp2.get(index);
 			listTemp2.remove((int)index);
 			super.trackTwoAm.add(ele);
@@ -72,7 +74,7 @@ public class RadomAllocateStrategy extends AllocateTemplate {
 		List<Conference> listTemp3 = new LinkedList<Conference>();
 		listTemp3.addAll(listTemp2);
 		while (sum3 < PM_MINUTES_MIN || sum3 > PM_MINUTES_MAX) {
-			Integer index = new Random().nextInt(listTemp3.size());
+			Integer index = random.nextInt(listTemp3.size());
 			Conference ele = listTemp3.get(index);
 			listTemp3.remove((int)index);
 			super.trackOnePm.add(ele);

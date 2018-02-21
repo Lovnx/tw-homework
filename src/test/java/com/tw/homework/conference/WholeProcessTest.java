@@ -22,7 +22,7 @@ public class WholeProcessTest {
 		context = new Context(new FileReader());
 		context.operate(Constant.FILE_NAME);
 		//allocate
-		context.setAllocate(new RadomAllocateStrategy());
+		context.setAllocate(new RandomAllocateStrategy());
 		context.operate(null);
 		//get allocate result Map, step to this line, our goal has been reached
 		map = context.getResult();
@@ -64,6 +64,6 @@ public class WholeProcessTest {
 			t2p += conference.getTimeDuration();
 		}
 		System.out.println();
-		System.out.println("------------------spend total: "+(System.currentTimeMillis() - begin)+"ms------------------");
+		System.out.println("------------------spend totally: "+(System.currentTimeMillis() - begin)+"ms------------------");
 	}
 }

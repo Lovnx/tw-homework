@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import static com.tw.homework.conference.Constant.*;
 
 /*
  * function - template class for implement
@@ -12,13 +13,17 @@ import java.util.Map;
  */
 public abstract class AllocateTemplate implements Allocation {
 	
-	protected List<Conference> trackOneAm = new ArrayList<Conference>();
+	protected List<Conference> trackOneAm = 
+			new ArrayList<Conference>(MAX_AM_CONFERENCE_NUM);
 	
-	protected List<Conference> trackOnePm = new ArrayList<Conference>();
+	protected List<Conference> trackOnePm = 
+			new ArrayList<Conference>();
 	
-	protected List<Conference> trackTwoAm = new ArrayList<Conference>();
+	protected List<Conference> trackTwoAm = 
+			new ArrayList<Conference>(MAX_AM_CONFERENCE_NUM);
 	
-	protected List<Conference> trackTwoPm = new ArrayList<Conference>();
+	protected List<Conference> trackTwoPm = 
+			new ArrayList<Conference>();
 
 	@Override
 	public Map<String, List<Conference>> getResult() {

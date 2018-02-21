@@ -14,4 +14,6 @@ public interface Constant {
 	Integer PM_MINUTES_MAX = 240;
 	//file which contains conferences list
 	String FILE_NAME = "conference.txt";
+	//max conference num at am, 180 / 30
+	Integer MAX_AM_CONFERENCE_NUM = 6;
 }
