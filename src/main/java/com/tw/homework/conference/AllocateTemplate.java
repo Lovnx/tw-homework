@@ -27,7 +27,7 @@ public abstract class AllocateTemplate implements Allocation {
 
 	@Override
 	public Map<String, List<Conference>> getResult() {
-		Map<String, List<Conference>> map = new HashMap<String, List<Conference>>();
+		Map<String, List<Conference>> map = new HashMap<String, List<Conference>>(4);
 		map.put("trackOneAm", trackOneAm);
 		map.put("trackOnePm", trackOnePm);
 		map.put("trackTwoAm", trackTwoAm);

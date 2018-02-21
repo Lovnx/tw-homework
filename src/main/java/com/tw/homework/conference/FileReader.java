@@ -16,6 +16,9 @@ public class FileReader extends AllocateTemplate {
 
 	@Override
 	public void operate(Object object) throws Exception {
+		if (!(object instanceof String) || object == null) {
+			throw new RuntimeException("Please check the file name!");
+		}
 		getTalkList((String)object);
 	}
 	
@@ -49,17 +52,17 @@ public class FileReader extends AllocateTemplate {
         String minSuffix = "min";
         String lightningSuffix = "lightning";
 
-        for(String talk : talkList) {
-            int lastSpaceIndex = talk.lastIndexOf(" ");
+        for(String conference : talkList) {
+            int lastSpaceIndex = conference.lastIndexOf(" ");
             if (lastSpaceIndex == -1)
-                throw new RuntimeException("Invalid talk, " + talk + ". Talk time must be specify.");
+                throw new RuntimeException("Invalid talk, " + conference + ". Talk time must be specify.");
 
-            String name = talk.substring(0, lastSpaceIndex);
-            String timeStr = talk.substring(lastSpaceIndex + 1);
+            String name = conference.substring(0, lastSpaceIndex);
+            String timeStr = conference.substring(lastSpaceIndex + 1);
             if (name == null || "".equals(name.trim()))
-                throw new RuntimeException("Invalid talk name, " + talk);
+                throw new RuntimeException("Invalid talk name, " + conference);
             else if (!timeStr.endsWith(minSuffix) && !timeStr.endsWith(lightningSuffix))
-                throw new RuntimeException("Invalid talk time, " + talk + ". Time must be in min or in lightning");
+                throw new RuntimeException("Invalid talk time, " + conference + ". Time must be in min or in lightning");
 
             int time = 0;
 			try {
@@ -74,9 +77,9 @@ public class FileReader extends AllocateTemplate {
                         time = Integer.parseInt(lightningTime) * 5;
                 }
             } catch (NumberFormatException nfe) {
-                throw new RuntimeException("Unbale to parse time " + timeStr + " for talk " + talk);
+                throw new RuntimeException("Unbale to parse time " + timeStr + " for talk " + conference);
             }
-			INITIAL_CONFERENCE_LIST.add(new Conference(talk, name, time));
+			INITIAL_CONFERENCE_LIST.add(new Conference(conference, name, time));
         }
     }
 }
