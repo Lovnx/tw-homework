@@ -10,7 +10,7 @@ import java.util.Map;
  * author - yezhiyuan
  * date - 02 08 2018
  */
-public abstract class AllocateTemplate implements Allocate{
+public abstract class AllocateTemplate implements Allocation {
 	
 	protected List<Conference> trackOneAm = new ArrayList<Conference>();
 	

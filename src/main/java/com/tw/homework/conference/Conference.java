@@ -37,7 +37,4 @@ public class Conference {
 	public void setTimeDuration(Integer timeDuration) {
 		this.timeDuration = timeDuration;
 	}
-    
-    
-    
 }

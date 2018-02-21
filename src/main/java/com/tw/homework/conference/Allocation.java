@@ -9,11 +9,17 @@ import java.util.Map;
  * author - yezhiyuan
  * date - 02 08 2018
  */
-public interface Allocate {
-	
-	List<Conference> initialTalkList = new ArrayList<Conference>();
-	
+public interface Allocation {
+	/**
+	 * initial conferences read from file
+	 */
+	List<Conference> INITIAL_CONFERENCE_LIST = new ArrayList<Conference>();
+	/**
+	 * result of allocation
+	 */
 	Map<String, List<Conference>> getResult();
-	
+	/**
+	 * template function for file reading or allocation and more..
+	 */
 	void operate(Object object) throws Exception;
 }

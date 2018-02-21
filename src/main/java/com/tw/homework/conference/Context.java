@@ -10,21 +10,21 @@ import java.util.Map;
  */
 public class Context {
 
-	private Allocate allocate;
+	private Allocation allocation;
 
-	public Context(Allocate allocate) {
-		this.allocate = allocate;
+	public Context(Allocation allocate) {
+		this.allocation = allocate;
 	}
 
-	public void setAllocate(Allocate allocate) {
-		this.allocate = allocate;
+	public void setAllocate(Allocation allocate) {
+		this.allocation = allocate;
 	}
 	
 	public void operate(Object object) throws Exception{
-		allocate.operate(object);
+		allocation.operate(object);
 	}
 	
 	public Map<String, List<Conference>> getResult(){
-		return allocate.getResult();
+		return allocation.getResult();
 	}
 }

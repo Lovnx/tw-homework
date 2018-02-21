@@ -76,7 +76,7 @@ public class FileReader extends AllocateTemplate {
             } catch (NumberFormatException nfe) {
                 throw new RuntimeException("Unbale to parse time " + timeStr + " for talk " + talk);
             }
-			initialTalkList.add(new Conference(talk, name, time));
+			INITIAL_CONFERENCE_LIST.add(new Conference(talk, name, time));
         }
     }
 }
